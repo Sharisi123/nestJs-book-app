@@ -1,0 +1,82 @@
+@import '../../source/styles/styles.scss';
+
+.chatItem {
+  height: 80vh;
+  display: grid;
+  grid-template-rows: 12fr 1fr;
+
+  .chatInfo {
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    h3 {
+      margin-left: 20px;
+    }
+  }
+
+  .chatContainer {
+    width: 100%;
+    min-height: 600px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    .myMessage {
+      @include message('right');
+      
+    }
+
+    .notMyMessage {
+      @include message('left');
+      margin-right: 10px;
+    }
+
+    .message {
+      border: 1.5px solid rgb(97, 149, 226);
+      border-radius: 5px;
+      padding: 7px 15px;
+      font-size: 16px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: rgb(165, 165, 165);
+      border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+  }
+
+  .controls {
+    margin-top: 10px;
+    input {
+      height: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.404);
+    }
+    input:focus {
+      border: none
+    }
+    input::placeholder {
+      color: rgba(0, 0, 0, 0.555);
+    }
+
+    button {
+      padding: 5px 20px;
+      margin-top: 10px;
+    }
+  }
+}
